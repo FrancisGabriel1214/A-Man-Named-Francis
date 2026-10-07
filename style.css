@@ -1,0 +1,54 @@
+:root{--ink:#14273a;--teal:#1d6f72;--mist:#eaf3f2;--line:#cfe0df;--rose:#c0463d;--bg:#fbfdfd;--text:#2b3a47;--card:#fff}
+@media(prefers-color-scheme:dark){:root{--ink:#e8f1f2;--teal:#6cc3c1;--mist:#16262e;--line:#264049;--rose:#ee8a80;--bg:#0f1b22;--text:#c5d3d9;--card:#15252d}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:1.05rem/1.7 "Figtree",system-ui,sans-serif;color:var(--text);background:var(--bg)}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;color:var(--ink);line-height:1.15;margin:0 0 .6rem}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:600}
+h2{font-size:1.9rem}h3{font-size:1.25rem}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--card);padding:.5rem}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.bar{max-width:1060px;margin:auto;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;gap:.75rem 2rem;align-items:center;justify-content:space-between}
+.brand{font:600 1.3rem "Newsreader",Georgia,serif;color:var(--ink);text-decoration:none}
+.brand span{color:var(--rose)}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:.25rem;margin:0;padding:0}
+nav a{display:block;padding:.4rem .9rem;border-radius:999px;text-decoration:none;color:var(--text);font-weight:500;transition:background .2s}
+nav a:hover{background:var(--mist)}
+nav a[aria-current]{background:var(--ink);color:var(--bg)}
+main{max-width:1060px;margin:auto;padding:3rem 1.25rem}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero .lead{font-size:1.2rem;max-width:34rem}
+.nick{color:var(--rose);font-weight:600;margin:0 0 .5rem}
+.portrait{position:relative;margin:0}
+.portrait::before{content:"";position:absolute;inset:1.2rem -1.2rem -1.2rem 1.2rem;background:var(--teal);border-radius:1.2rem}
+.portrait img{position:relative;width:100%;height:auto;border-radius:1.2rem;display:block;aspect-ratio:4/5;object-fit:cover}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{padding:.7rem 1.4rem;border-radius:.6rem;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:none;color:var(--ink);border:2px solid var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:4rem 0 0}
+.facts div{background:var(--mist);padding:1.1rem 1.3rem;border-radius:.8rem;border-left:5px solid var(--teal)}
+.facts dt{font-size:.9rem;color:var(--teal);font-weight:600}.facts dd{margin:0;font-weight:600;color:var(--ink)}
+blockquote{margin:3rem 0 0;padding:1.6rem 2rem;background:var(--ink);color:var(--bg);border-radius:1rem;font:italic 1.4rem/1.5 "Newsreader",Georgia,serif}
+blockquote footer{font:.95rem "Figtree",sans-serif;opacity:.85;margin-top:.7rem;font-style:normal}
+.page-title{margin-bottom:2rem;padding-bottom:1rem;border-bottom:3px solid var(--rose);display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem}
+.card.wide{grid-column:1/-1}
+.card h2{font-size:1.4rem}
+.card ul{margin:0;padding-left:1.2rem}
+.tl{border-left:3px solid var(--teal);padding-left:1rem;margin:0 0 1rem}
+.tl strong{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0!important;margin:0}
+.tags li{background:var(--mist);padding:.3rem .9rem;border-radius:999px;font-weight:500}
+.quotes{display:grid;gap:1.5rem}
+.quotes blockquote{margin:0;background:var(--card);color:var(--text);border:1px solid var(--line);border-left:6px solid var(--rose);font-size:1.25rem}
+.quotes cite{display:block;margin-top:.8rem;font:600 .95rem "Figtree",sans-serif;color:var(--teal)}
+figure.cert{margin:0;background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden}
+figure.cert img{width:100%;height:auto;display:block}
+figure.cert figcaption{padding:1rem 1.3rem}
+footer.site{border-top:1px solid var(--line);text-align:center;padding:1.8rem 1rem;font-size:.95rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.portrait{order:-1;max-width:320px;margin:0 1.2rem 1.2rem 0}main{padding:2rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
